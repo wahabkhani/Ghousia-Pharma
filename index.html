@@ -1,0 +1,1239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>GHOUSIA PHARMA - Product Cart</title>
+
+    <style>
+        /* =========================================================
+           GHOUSIA PHARMA
+           PRODUCTS ARRAY - EDIT YOUR PRODUCTS HERE
+           ========================================================= */
+
+        const_PLACEHOLDER = "";
+
+    </style>
+</head>
+
+<body>
+
+<script>
+/* =========================================================
+   PRODUCTS ARRAY
+   Add / edit your products here.
+
+   You can keep up to 100 products.
+   Empty rows are automatically shown if fewer than 100
+   products are added.
+   ========================================================= */
+
+const products = [
+    { code: "4821", name: "PANADOL 500MG TABLETS", offer: "12.00%", qty: 0 },
+    { code: "7314", name: "PANADOL EXTRA TABLETS", offer: "15.00%", qty: 0 },
+    { code: "2058", name: "PANADOL CF TABLETS", offer: "11.00%", qty: 0 },
+    { code: "6493", name: "PANADOL ACTIFAST", offer: "13.00%", qty: 0 },
+    { code: "9182", name: "CALPOL 120MG/5ML SYRUP", offer: "14.00%", qty: 0 },
+    { code: "3765", name: "CALPOL 250MG/5ML SYRUP", offer: "12.00%", qty: 0 },
+    { code: "5407", name: "DISPRIN TABLETS", offer: "16.00%", qty: 0 },
+    { code: "8236", name: "BRUFEN 400MG TABLETS", offer: "10.00%", qty: 0 },
+    { code: "1945", name: "BRUFEN 200MG TABLETS", offer: "11.00%", qty: 0 },
+    { code: "6083", name: "BRUFEN SYRUP 100MG/5ML", offer: "18.00%", qty: 0 },
+    { code: "4527", name: "PONSTAN FORTE 500MG", offer: "15.00%", qty: 0 },
+    { code: "7701", name: "VOLTAREN 50MG TABLETS", offer: "13.00%", qty: 0 },
+    { code: "3169", name: "VOLTAREN EMULGEL 20G", offer: "17.00%", qty: 0 },
+    { code: "8842", name: "ARCOXIA 90MG", offer: "12.00%", qty: 0 },
+    { code: "5294", name: "CELEBREX 200MG", offer: "14.00%", qty: 0 },
+    { code: "6418", name: "AUGMENTIN 625MG TABLETS", offer: "16.00%", qty: 0 },
+    { code: "2073", name: "AUGMENTIN 1G TABLETS", offer: "18.00%", qty: 0 },
+    { code: "9531", name: "AUGMENTIN SYRUP 156MG", offer: "12.00%", qty: 0 },
+    { code: "4186", name: "AMOXIL 500MG CAPSULES", offer: "15.00%", qty: 0 },
+    { code: "7350", name: "ZITHROMAX 500MG", offer: "13.00%", qty: 0 },
+    { code: "1694", name: "ZINNAT 500MG", offer: "16.00%", qty: 0 },
+    { code: "8025", name: "KLARICID 500MG", offer: "14.00%", qty: 0 },
+    { code: "3471", name: "CIPRO 500MG", offer: "19.00%", qty: 0 },
+    { code: "9264", name: "FLAGYL 400MG", offer: "17.00%", qty: 0 },
+    { code: "5810", name: "FLAGYL SUSPENSION", offer: "12.00%", qty: 0 },
+    { code: "2637", name: "SEPTRAN DS TABLETS", offer: "15.00%", qty: 0 },
+    { code: "7149", name: "ROCEPHIN 1G INJECTION", offer: "18.00%", qty: 0 },
+    { code: "4902", name: "NEXIUM 40MG", offer: "16.00%", qty: 0 },
+    { code: "8357", name: "NEXIUM 20MG", offer: "13.00%", qty: 0 },
+    { code: "1528", name: "ZANTAC 150MG", offer: "20.00%", qty: 0 },
+    { code: "6743", name: "GAVISCON LIQUID 200ML", offer: "17.00%", qty: 0 },
+    { code: "3096", name: "GAVISCON DOUBLE ACTION", offer: "14.00%", qty: 0 },
+    { code: "7584", name: "ENO FRUIT SALT", offer: "19.00%", qty: 0 },
+    { code: "4215", name: "MOTILIUM 10MG", offer: "16.00%", qty: 0 },
+    { code: "9063", name: "DUPHALAC SYRUP 200ML", offer: "15.00%", qty: 0 },
+    { code: "5378", name: "CREON 25000", offer: "12.00%", qty: 0 },
+    { code: "2841", name: "BUSCOPAN 10MG", offer: "14.00%", qty: 0 },
+    { code: "6197", name: "IMODIUM 2MG", offer: "16.00%", qty: 0 },
+    { code: "8430", name: "VENTOLIN INHALER", offer: "11.00%", qty: 0 },
+    { code: "1756", name: "VENTOLIN SYRUP", offer: "18.00%", qty: 0 },
+    { code: "6924", name: "SERETIDE 250 INHALER", offer: "15.00%", qty: 0 },
+    { code: "3085", name: "SINGULAIR 10MG", offer: "13.00%", qty: 0 },
+    { code: "7542", name: "ZYRTEC 10MG", offer: "17.00%", qty: 0 },
+    { code: "4269", name: "TELFAST 120MG", offer: "16.00%", qty: 0 },
+    { code: "8315", name: "AVIL 25MG", offer: "14.00%", qty: 0 },
+    { code: "2604", name: "CLARITIN 10MG", offer: "12.00%", qty: 0 },
+    { code: "9157", name: "OTRIVIN NASAL DROPS", offer: "15.00%", qty: 0 },
+    { code: "5736", name: "STREPSILS LOZENGES", offer: "18.00%", qty: 0 },
+    { code: "6482", name: "BETNOVATE CREAM", offer: "16.00%", qty: 0 },
+    { code: "3971", name: "BETNOVATE-N CREAM", offer: "13.00%", qty: 0 },
+    { code: "8206", name: "CANESTEN CREAM", offer: "14.00%", qty: 0 },
+    { code: "4519", name: "ZOVIRAX CREAM", offer: "20.00%", qty: 0 },
+    { code: "7630", name: "BEPANTHEN OINTMENT", offer: "15.00%", qty: 0 },
+    { code: "1847", name: "FUCIDIN CREAM", offer: "12.00%", qty: 0 },
+    { code: "5962", name: "LIPITOR 20MG", offer: "17.00%", qty: 0 },
+    { code: "7248", name: "LIPITOR 10MG", offer: "14.00%", qty: 0 },
+    { code: "3091", name: "CRESTOR 10MG", offer: "16.00%", qty: 0 },
+    { code: "8674", name: "NORVASC 5MG", offer: "13.00%", qty: 0 },
+    { code: "2356", name: "DIOVAN 80MG", offer: "18.00%", qty: 0 },
+    { code: "6405", name: "CONCOR 5MG", offer: "15.00%", qty: 0 },
+    { code: "4189", name: "TRITACE 5MG", offer: "12.00%", qty: 0 },
+    { code: "7526", name: "PLAVIX 75MG", offer: "14.00%", qty: 0 },
+    { code: "1903", name: "ASPIRIN PROTECT 100MG", offer: "11.00%", qty: 0 },
+    { code: "5368", name: "LASIX 40MG", offer: "13.00%", qty: 0 },
+    { code: "8791", name: "GLUCOPHAGE 500MG", offer: "15.00%", qty: 0 },
+    { code: "2640", name: "GLUCOPHAGE 850MG", offer: "12.00%", qty: 0 },
+    { code: "6153", name: "DIAMICRON MR 60MG", offer: "14.00%", qty: 0 },
+    { code: "3427", name: "AMARYL 2MG", offer: "16.00%", qty: 0 },
+    { code: "9085", name: "JANUVIA 100MG", offer: "18.00%", qty: 0 },
+    { code: "4716", name: "GALVUS 50MG", offer: "10.00%", qty: 0 },
+    { code: "8231", name: "MIXTARD 30 INSULIN", offer: "13.00%", qty: 0 },
+    { code: "2957", name: "LANTUS SOLOSTAR", offer: "11.00%", qty: 0 },
+    { code: "7042", name: "NOVORAPID FLEXPEN", offer: "15.00%", qty: 0 },
+    { code: "5186", name: "EUTHYROX 50MCG", offer: "17.00%", qty: 0 },
+    { code: "9364", name: "NEUROBION TABLETS", offer: "19.00%", qty: 0 },
+    { code: "3615", name: "NEUROBION INJECTION", offer: "16.00%", qty: 0 },
+    { code: "6809", name: "BEROCCA PERFORMANCE", offer: "18.00%", qty: 0 },
+    { code: "2473", name: "SURBEX Z TABLETS", offer: "14.00%", qty: 0 },
+    { code: "7951", name: "CENTRUM ADULTS", offer: "12.00%", qty: 0 },
+    { code: "4308", name: "CENTRUM WOMEN", offer: "17.00%", qty: 0 },
+    { code: "1625", name: "CALCIUM SANDOZ FORTE", offer: "15.00%", qty: 0 },
+    { code: "5749", name: "CALTRATE PLUS", offer: "13.00%", qty: 0 },
+    { code: "8263", name: "SEROQUEL 25MG", offer: "16.00%", qty: 0 },
+    { code: "3017", name: "XANAX 0.5MG", offer: "18.00%", qty: 0 },
+    { code: "6594", name: "LEXOTANIL 3MG", offer: "14.00%", qty: 0 },
+    { code: "2186", name: "DUPHASTON 10MG", offer: "12.00%", qty: 0 },
+    { code: "7435", name: "CLOMID 50MG", offer: "16.00%", qty: 0 },
+    { code: "9052", name: "VIAGRA 50MG", offer: "19.00%", qty: 0 },
+    { code: "3864", name: "DETTOL ANTISEPTIC 250ML", offer: "15.00%", qty: 0 },
+    { code: "5271", name: "SAVLON ANTISEPTIC 200ML", offer: "17.00%", qty: 0 },
+    { code: "8146", name: "BETADINE SOLUTION 120ML", offer: "14.00%", qty: 0 },
+    { code: "2639", name: "VICKS VAPORUB 50G", offer: "12.00%", qty: 0 },
+    { code: "6907", name: "VICKS ACTION 500", offer: "18.00%", qty: 0 },
+    { code: "4352", name: "NUROFEN 200MG", offer: "16.00%", qty: 0 },
+    { code: "7819", name: "PANADOL BABY DROPS", offer: "13.00%", qty: 0 },
+    { code: "1540", name: "SENSODYNE REPAIR & PROTECT", offer: "20.00%", qty: 0 },
+    { code: "6382", name: "VOLTAREN SR 100MG", offer: "15.00%", qty: 0 },
+    { code: "2719", name: "MEDROL 16MG", offer: "18.00%", qty: 0 },
+    { code: "8460", name: "ZESTRIL 10MG", offer: "14.00%", qty: 0 },
+    { code: "5037", name: "TOBREX EYE DROPS", offer: "16.00%", qty: 0 },
+       { code: "5706", name: "FLAMAZINE CREAM 50G", offer: "15.00%", qty: 0 },
+    { code: "2606", name: "SUDOCREM 60G", offer: "12.00%", qty: 0 },
+    { code: "8367", name: "DESITIN DIAPER RASH CREAM", offer: "14.00%", qty: 0 },
+    { code: "1188", name: "NIVEA BODY LOTION 400ML", offer: "16.00%", qty: 0 },
+    { code: "9032", name: "NIVEA CREME TUBE 50ML", offer: "18.00%", qty: 0 },
+    { code: "6148", name: "VASELINE PETROLEUM JELLY 100ML", offer: "10.00%", qty: 0 },
+    { code: "4444", name: "VASELINE INTENSIVE CARE LOTION", offer: "13.00%", qty: 0 },
+    { code: "7508", name: "CETAPHIL MOISTURIZING LOTION 250ML", offer: "11.00%", qty: 0 },
+    { code: "5120", name: "CETAPHIL GENTLE CLEANSER 125ML", offer: "15.00%", qty: 0 },
+    { code: "6696", name: "EUCERIN UREA REPAIR LOTION", offer: "17.00%", qty: 0 },
+    { code: "6843", name: "AVEENO DAILY MOISTURISING LOTION", offer: "19.00%", qty: 0 },
+    { code: "7166", name: "CERAVE MOISTURISING CREAM", offer: "16.00%", qty: 0 },
+    { code: "9414", name: "LA ROCHE-POSAY EFFACLAR GEL", offer: "18.00%", qty: 0 },
+    { code: "2250", name: "BIODERMA SEBIUM GEL", offer: "14.00%", qty: 0 },
+    { code: "6577", name: "DIFFERIN GEL 15G", offer: "12.00%", qty: 0 },
+    { code: "2469", name: "DUAC GEL 15G", offer: "17.00%", qty: 0 },
+    { code: "9815", name: "BENZAC AC GEL 5%", offer: "15.00%", qty: 0 },
+    { code: "5786", name: "SKINOREN CREAM 20%", offer: "13.00%", qty: 0 },
+    { code: "5712", name: "BENGAY PAIN RELIEF CREAM", offer: "16.00%", qty: 0 },
+    { code: "8494", name: "VOLTAREN EMULGEL 50G", offer: "18.00%", qty: 0 },
+    { code: "3308", name: "FASTUM GEL 30G", offer: "14.00%", qty: 0 },
+    { code: "6062", name: "OLFEN GEL 50G", offer: "12.00%", qty: 0 },
+    { code: "1405", name: "CORTIZONE 10 CREAM", offer: "16.00%", qty: 0 },
+    { code: "7043", name: "CALADRYL LOTION", offer: "19.00%", qty: 0 },
+    { code: "6956", name: "FUCITHALMIC EYE DROPS", offer: "15.00%", qty: 0 },
+    { code: "8554", name: "SYSTANE ULTRA EYE DROPS", offer: "17.00%", qty: 0 },
+    { code: "7917", name: "REFRESH TEARS EYE DROPS", offer: "14.00%", qty: 0 },
+    { code: "2485", name: "TOBRADEX EYE OINTMENT", offer: "12.00%", qty: 0 },
+    { code: "7533", name: "OPTREX EYE DROPS", offer: "18.00%", qty: 0 },
+    { code: "9166", name: "VISINE EYE DROPS", offer: "16.00%", qty: 0 },
+    { code: "2907", name: "BONJELA GEL 15G", offer: "13.00%", qty: 0 },
+    { code: "7970", name: "CORSODYL MOUTHWASH 200ML", offer: "20.00%", qty: 0 },
+    { code: "9296", name: "KAMISTAD GEL", offer: "15.00%", qty: 0 },
+    { code: "9045", name: "NASONEX NASAL SPRAY", offer: "18.00%", qty: 0 },
+    { code: "7523", name: "FLIXONASE NASAL SPRAY", offer: "14.00%", qty: 0 },
+    { code: "9595", name: "PROCTOSEDYL OINTMENT", offer: "16.00%", qty: 0 }
+ 
+];
+
+/* =========================================================
+   MAKE SURE WE HAVE EXACTLY 100 ROWS
+   ========================================================= */
+
+while (products.length < 100) {
+    products.push({
+        code: "",
+        name: "",
+        offer: "",
+        qty: 0
+    });
+}
+
+
+/* =========================================================
+   ADD PRODUCT EMOJIS
+   ========================================================= */
+
+const productEmojis = "🛍️ 🥤 🍫 🧴 🧼 🧃 🧹 🛒";
+
+
+/* =========================================================
+   PAGE HTML
+   ========================================================= */
+
+document.body.innerHTML = `
+
+<header class="top-header">
+    <div class="brand">
+        GHOUSIA PHARMA 🛒📦
+    </div>
+
+    <div class="whatsapp">
+        WhatsApp: 03412859319 😷💊
+    </div>
+</header>
+
+
+<div class="medical-line">
+    ${productEmojis}
+</div>
+
+
+<main class="container">
+
+    <div class="search-area">
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="🔍 Search product... catalog list"
+            autocomplete="off"
+        >
+    </div>
+
+
+    <div class="cart-summary">
+        <span id="cartCount">
+            🛒 Cart: 0 Items Selected
+        </span>
+
+        <span class="catalog-count">
+            📦 100 Items
+        </span>
+    </div>
+
+
+    <div class="table-wrapper">
+
+        <table>
+
+            <thead>
+                <tr>
+                    <th>Code</th>
+                    <th>Item / Product Name 🛍️</th>
+                    <th>Offer % </th>
+                    <th>Quantity</th>
+                </tr>
+            </thead>
+
+            <tbody id="medicineTableBody"></tbody>
+
+        </table>
+
+    </div>
+
+</main>
+
+
+<footer>
+    © GHOUSIA PHARMA | 03412859319
+</footer>
+
+
+<button
+    class="whatsapp-order-btn"
+    id="whatsappOrderBtn"
+>
+    📲 SEND ALL <span id="buttonCount">0</span> ITEMS TO WHATSAPP
+</button>
+
+`;
+
+
+/* =========================================================
+   ADD CSS
+   ========================================================= */
+
+const style = document.createElement("style");
+
+style.textContent = `
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f4f8fb;
+    color: #17202a;
+    padding-bottom: 95px;
+}
+
+
+/* =========================
+   HEADER
+   ========================= */
+
+.top-header {
+    background: #0877c9;
+    color: white;
+
+    min-height: 58px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 28px;
+
+    font-weight: 700;
+}
+
+
+.brand {
+    font-size: 20px;
+}
+
+
+.whatsapp {
+    font-size: 16px;
+}
+
+
+/* =========================
+   MEDICAL EMOJI LINE
+   ========================= */
+
+.medical-line {
+    background: white;
+
+    text-align: center;
+
+    padding: 9px 5px;
+
+    font-size: 20px;
+
+    border-bottom: 1px solid #e1e8ed;
+
+    letter-spacing: 5px;
+}
+
+
+/* =========================
+   MAIN CONTAINER
+   ========================= */
+
+.container {
+    width: 96%;
+    max-width: 1250px;
+
+    margin: 18px auto;
+}
+
+
+/* =========================
+   SEARCH
+   ========================= */
+
+.search-area {
+    margin-bottom: 15px;
+}
+
+
+#searchInput {
+    width: 100%;
+
+    padding: 14px 17px;
+
+    border: 2px solid #d9e5ee;
+
+    border-radius: 10px;
+
+    font-size: 16px;
+
+    outline: none;
+
+    background: white;
+
+    transition: 0.2s;
+}
+
+
+#searchInput:focus {
+    border-color: #0877c9;
+
+    box-shadow:
+        0 0 0 3px rgba(8,119,201,0.10);
+}
+
+
+/* =========================
+   CART SUMMARY
+   ========================= */
+
+.cart-summary {
+    background: white;
+
+    border-radius: 10px;
+
+    padding: 13px 16px;
+
+    margin-bottom: 12px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    border: 1px solid #e2e9ef;
+
+    font-weight: 700;
+}
+
+
+#cartCount {
+    color: #0877c9;
+}
+
+
+.catalog-count {
+    color: #687783;
+
+    font-size: 14px;
+}
+
+
+/* =========================
+   TABLE
+   ========================= */
+
+.table-wrapper {
+    background: white;
+
+    border-radius: 10px;
+
+    overflow-x: auto;
+
+    border: 1px solid #dce5eb;
+}
+
+
+table {
+    width: 100%;
+
+    border-collapse: collapse;
+
+    min-width: 700px;
+}
+
+
+thead {
+    background: #0877c9;
+
+    color: white;
+}
+
+
+th {
+    padding: 13px 12px;
+
+    text-align: left;
+
+    font-size: 14px;
+}
+
+
+td {
+    padding: 8px 12px;
+
+    border-bottom: 1px solid #e8edf1;
+
+    font-size: 14px;
+
+    vertical-align: middle;
+}
+
+
+tbody tr {
+    transition: 0.2s;
+}
+
+
+tbody tr:hover {
+    background: #f5faff;
+}
+
+
+tbody tr.added {
+    background: #e9f9ee;
+}
+
+
+tbody tr.added td {
+    border-bottom-color: #c5e9d0;
+}
+
+
+.code {
+    font-weight: 700;
+
+    color: #0877c9;
+
+    width: 120px;
+}
+
+
+.medicine-name {
+    font-weight: 600;
+
+    min-width: 270px;
+}
+
+
+.offer {
+    color: #e67e22;
+
+    font-weight: 700;
+
+    width: 120px;
+}
+
+
+/* =========================
+   QUANTITY
+   ========================= */
+
+.quantity-cell {
+    white-space: nowrap;
+}
+
+
+.quantity-box {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 6px;
+}
+
+
+.qty-btn {
+    width: 34px;
+    height: 34px;
+
+    border: none;
+
+    border-radius: 7px;
+
+    font-size: 20px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    color: white;
+
+    transition: 0.15s;
+}
+
+
+.minus-btn {
+    background: #e74c3c;
+}
+
+
+.plus-btn {
+    background: #16a34a;
+}
+
+
+.qty-btn:hover {
+    transform: translateY(-1px);
+
+    opacity: 0.9;
+}
+
+
+.qty-number {
+    min-width: 30px;
+
+    text-align: center;
+
+    font-size: 16px;
+
+    font-weight: 700;
+}
+
+
+.added-label {
+    margin-left: 8px;
+
+    color: #16a34a;
+
+    font-size: 13px;
+
+    font-weight: 700;
+}
+
+
+/* =========================
+   EMPTY ROWS
+   ========================= */
+
+.empty-row td {
+    color: #b4bec7;
+}
+
+
+.empty-row .qty-btn {
+    opacity: 0.55;
+}
+
+
+.empty-row .medicine-name {
+    color: #aeb8c0;
+}
+
+
+/* =========================
+   FOOTER
+   ========================= */
+
+footer {
+    text-align: center;
+
+    padding: 20px 10px;
+
+    color: #687783;
+
+    font-size: 13px;
+}
+
+
+/* =========================
+   WHATSAPP FIXED BUTTON
+   ========================= */
+
+.whatsapp-order-btn {
+    position: fixed;
+
+    bottom: 0;
+    left: 0;
+
+    width: 100%;
+
+    min-height: 65px;
+
+    border: none;
+
+    background: #16a34a;
+
+    color: white;
+
+    font-size: 17px;
+
+    font-weight: 800;
+
+    cursor: pointer;
+
+    z-index: 9999;
+
+    box-shadow:
+        0 -4px 15px rgba(0,0,0,0.12);
+
+    transition: 0.2s;
+}
+
+
+.whatsapp-order-btn:hover {
+    background: #12843c;
+}
+
+
+.whatsapp-order-btn:active {
+    transform: scale(0.99);
+}
+
+
+/* =========================
+   MOBILE
+   ========================= */
+
+@media (max-width: 700px) {
+
+    body {
+        padding-bottom: 80px;
+    }
+
+
+    .top-header {
+        min-height: 55px;
+
+        padding: 10px 13px;
+
+        gap: 10px;
+    }
+
+
+    .brand {
+        font-size: 15px;
+    }
+
+
+    .whatsapp {
+        font-size: 12px;
+
+        text-align: right;
+    }
+
+
+    .medical-line {
+        font-size: 18px;
+
+        letter-spacing: 2px;
+
+        padding: 8px 3px;
+    }
+
+
+    .container {
+        width: 94%;
+
+        margin-top: 14px;
+    }
+
+
+    .cart-summary {
+        font-size: 13px;
+
+        padding: 11px;
+    }
+
+
+    .catalog-count {
+        font-size: 12px;
+    }
+
+
+    /*
+       Convert table rows into cards
+    */
+
+    .table-wrapper {
+        background: transparent;
+
+        border: none;
+
+        overflow: visible;
+    }
+
+
+    table,
+    tbody {
+        display: block;
+
+        width: 100%;
+
+        min-width: 0;
+    }
+
+
+    thead {
+        display: none;
+    }
+
+
+    tbody tr {
+        display: grid;
+
+        grid-template-columns: 1fr 1fr;
+
+        gap: 7px;
+
+        background: white;
+
+        margin-bottom: 10px;
+
+        padding: 13px;
+
+        border-radius: 11px;
+
+        border: 1px solid #dfe7ed;
+
+        box-shadow: 0 2px 7px rgba(0,0,0,0.04);
+    }
+
+
+    tbody tr.added {
+        background: #e9f9ee;
+
+        border-color: #9bd8ae;
+    }
+
+
+    td {
+        display: block;
+
+        padding: 3px;
+
+        border: none;
+    }
+
+
+    td:first-child::before {
+        content: "CODE";
+
+        display: block;
+
+        font-size: 10px;
+
+        color: #8997a2;
+
+        font-weight: 700;
+
+        margin-bottom: 2px;
+    }
+
+
+    .code {
+        width: auto;
+
+        font-size: 14px;
+    }
+
+
+    .medicine-name {
+        grid-column: 1 / -1;
+
+        min-width: 0;
+
+        font-size: 15px;
+    }
+
+
+    .medicine-name::before {
+        content: "ITEM";
+
+        display: block;
+
+        font-size: 10px;
+
+        color: #8997a2;
+
+        margin-bottom: 2px;
+    }
+
+
+    .offer {
+        width: auto;
+
+        font-size: 14px;
+    }
+
+
+    .offer::before {
+        content: "OFFER";
+
+        display: block;
+
+        font-size: 10px;
+
+        color: #8997a2;
+
+        margin-bottom: 2px;
+    }
+
+
+    .quantity-cell {
+        text-align: right;
+
+        display: flex;
+
+        justify-content: flex-end;
+
+        align-items: center;
+    }
+
+
+    .quantity-cell::before {
+        content: "QUANTITY";
+
+        font-size: 10px;
+
+        color: #8997a2;
+
+        font-weight: 700;
+
+        margin-right: 8px;
+    }
+
+
+    .quantity-box {
+        gap: 5px;
+    }
+
+
+    .qty-btn {
+        width: 43px;
+        height: 43px;
+
+        font-size: 23px;
+
+        border-radius: 9px;
+    }
+
+
+    .qty-number {
+        min-width: 35px;
+
+        font-size: 18px;
+    }
+
+
+    .added-label {
+        display: block;
+
+        margin-left: 0;
+
+        margin-top: 4px;
+
+        font-size: 11px;
+    }
+
+
+    .empty-row {
+        opacity: 0.65;
+    }
+
+
+    .whatsapp-order-btn {
+        min-height: 60px;
+
+        font-size: 14px;
+
+        padding: 0 10px;
+    }
+
+}
+
+
+@media (max-width: 380px) {
+
+    .brand {
+        font-size: 13px;
+    }
+
+
+    .whatsapp {
+        font-size: 10px;
+    }
+
+
+    .medical-line {
+        font-size: 16px;
+    }
+
+
+    .whatsapp-order-btn {
+        font-size: 12px;
+    }
+
+}
+
+`;
+
+document.head.appendChild(style);
+
+
+/* =========================================================
+   RENDER MEDICINES
+   ========================================================= */
+
+const tableBody = document.getElementById("medicineTableBody");
+
+
+function renderMedicines(list = products) {
+
+    tableBody.innerHTML = "";
+
+    list.forEach((medicine, index) => {
+
+        const row = document.createElement("tr");
+
+        if (medicine.qty > 0) {
+            row.classList.add("added");
+        }
+
+        if (!medicine.code && !medicine.name && !medicine.offer) {
+            row.classList.add("empty-row");
+        }
+
+
+        row.innerHTML = `
+
+            <td class="code">
+                ${escapeHTML(medicine.code)}
+            </td>
+
+            <td class="medicine-name">
+                ${medicine.name
+                    ? escapeHTML(medicine.name)
+                    : "Empty product slot"
+                }
+            </td>
+
+            <td class="offer">
+                ${medicine.offer
+                    ? escapeHTML(medicine.offer)
+                    : "-"
+                }
+            </td>
+
+            <td class="quantity-cell">
+
+                <div class="quantity-box">
+
+                    <button
+                        class="qty-btn minus-btn"
+                        onclick="changeQuantity(${index}, -1)"
+                        aria-label="Decrease quantity"
+                    >
+                        −
+                    </button>
+
+                    <span class="qty-number">
+                        ${medicine.qty}
+                    </span>
+
+                    <button
+                        class="qty-btn plus-btn"
+                        onclick="changeQuantity(${index}, 1)"
+                        aria-label="Increase quantity"
+                    >
+                        +
+                    </button>
+
+                </div>
+
+                ${
+                    medicine.qty > 0
+                    ? `<span class="added-label">✅ Added</span>`
+                    : ""
+                }
+
+            </td>
+        `;
+
+
+        tableBody.appendChild(row);
+
+    });
+
+}
+
+
+/* =========================================================
+   ESCAPE HTML
+   ========================================================= */
+
+function escapeHTML(value) {
+
+    const div = document.createElement("div");
+
+    div.textContent = value;
+
+    return div.innerHTML;
+
+}
+
+
+/* =========================================================
+   CHANGE QUANTITY
+   ========================================================= */
+
+function changeQuantity(index, amount) {
+
+    const medicine = products[index];
+
+    medicine.qty += amount;
+
+    if (medicine.qty < 0) {
+        medicine.qty = 0;
+    }
+
+    updateCart();
+
+    renderMedicines(getFilteredMedicines());
+
+}
+
+
+/* =========================================================
+   CART COUNT
+   ========================================================= */
+
+function getTotalItems() {
+
+    return products.reduce(
+        (total, medicine) => total + medicine.qty,
+        0
+    );
+
+}
+
+
+function updateCart() {
+
+    const total = getTotalItems();
+
+    document.getElementById("cartCount").textContent =
+        `🛒 Cart: ${total} Items Selected`;
+
+    document.getElementById("buttonCount").textContent =
+        total;
+
+}
+
+
+/* =========================================================
+   SEARCH
+   ========================================================= */
+
+function getFilteredMedicines() {
+
+    const search =
+        document
+            .getElementById("searchInput")
+            .value
+            .toLowerCase()
+            .trim();
+
+
+    if (!search) {
+        return products;
+    }
+
+
+    return products.filter(medicine => {
+
+        return (
+            medicine.code.toLowerCase().includes(search) ||
+            medicine.name.toLowerCase().includes(search)
+        );
+
+    });
+
+}
+
+
+document
+    .getElementById("searchInput")
+    .addEventListener("input", function () {
+
+        renderMedicines(getFilteredMedicines());
+
+    });
+
+
+/* =========================================================
+   WHATSAPP ORDER
+   ========================================================= */
+
+document
+    .getElementById("whatsappOrderBtn")
+    .addEventListener("click", function () {
+
+        const selectedItems =
+            products.filter(
+                medicine => medicine.qty > 0
+            );
+
+
+        if (selectedItems.length === 0) {
+
+            alert(
+                "Please select at least one product before sending the order."
+            );
+
+            return;
+        }
+
+
+        const totalItems =
+            getTotalItems();
+
+
+        let message =
+`Assalam-o-Alaikum Ghousia Pharma...
+
+New Product Order 🛒:
+
+`;
+
+
+        selectedItems.forEach((medicine, index) => {
+
+            message +=
+`${index + 1}. ${medicine.name.replace(
+    /[^\x00-\x7F]/g,
+    ""
+).trim()} (Code: ${medicine.code}) - Qty: ${medicine.qty} - Offer: ${medicine.offer}
+`;
+
+        });
+
+
+        message +=
+`
+Total Items: ${totalItems}`;
+
+
+        const whatsappURL =
+            "https://wa.me/923412859319?text=" +
+            encodeURIComponent(message);
+
+
+        window.open(
+            whatsappURL,
+            "_blank"
+        );
+
+    });
+
+
+/* =========================================================
+   INITIAL LOAD
+   ========================================================= */
+
+renderMedicines();
+
+updateCart();
+
+</script>
+
+</body>
+</html>
